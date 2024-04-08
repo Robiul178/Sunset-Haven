@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const { logInUser } = useContext(AuthContext);
+    const { logInUser, singInUsingGoogle } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
 
 
@@ -22,8 +22,19 @@ const Login = () => {
             }).catch(error => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
-            })
+            });
+    };
 
+    const handleGoogleSingIn = e => {
+        e.preventDefault()
+        singInUsingGoogle()
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+            }).catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+            });
     }
 
     return (
@@ -52,7 +63,7 @@ const Login = () => {
                 </div>
             </form>
             <div className="text-center">
-                <button className="btn btn-outline btn-info me-4">
+                <button onClick={handleGoogleSingIn} className="btn btn-outline btn-info me-4">
                     <FcGoogle className="text-3xl"></FcGoogle>
                     <p className="text-lg"> SingUp with Google</p>
                 </button>
