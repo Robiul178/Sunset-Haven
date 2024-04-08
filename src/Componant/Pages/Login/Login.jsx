@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
-import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const { logInUser, singInUsingGoogle } = useContext(AuthContext);
+    const { logInUser, singInUsingGoogle, gitHubLogIn } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
+    // const [loginUser, setLogInUser] = useState('');
 
 
     const handleUserLogInForm = e => {
@@ -28,6 +29,17 @@ const Login = () => {
     const handleGoogleSingIn = e => {
         e.preventDefault()
         singInUsingGoogle()
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+            }).catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+            });
+    }
+    const handleGitHubLogIn = e => {
+        e.preventDefault()
+        gitHubLogIn()
             .then((result) => {
                 const user = result.user;
                 console.log(user)
@@ -67,13 +79,13 @@ const Login = () => {
                     <FcGoogle className="text-3xl"></FcGoogle>
                     <p className="text-lg"> SingUp with Google</p>
                 </button>
-                <button className="btn btn-outline btn-success">
-                    <FaFacebook className="text-3xl"></FaFacebook>
-                    <p className="text-lg">SingUp with Facebook</p>
+                <button onClick={handleGitHubLogIn} className="btn btn-outline btn-success">
+                    <FaGithub className="text-3xl"></FaGithub>
+                    <p className="text-lg">SingUp with GitHub</p>
                 </button>
             </div>
             <div>
-                {success}
+
             </div>
         </div>
     );

@@ -1,8 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from '../../../assets/logo.png';
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                setSuccess('Sign-out successful.')
+            }).catch((error) => {
+                setError(error)
+            });
+    }
 
     const links = <>
         <li>
@@ -57,14 +71,26 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-4">
                     <div className="avatar">
-                        <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <div className="w-12 rounded-full ring ring-black">
+                            {/* <img src="" /> */}
+                            <img src={user?.photoURL} />
                         </div>
                     </div>
                     <div>
-                        <Link to='/login'>
-                            <button className="btn btn-outline">LogIn</button></Link>
+                        {
+                            user ?
+                                <button onClick={handleLogOut} className="btn btn-outline">Log Out</button>
+                                :
+                                <Link to='/login'>
+                                    <button className="btn btn-outline">LogIn</button>
+                                </Link>
+
+                        }
                     </div>
+                    {/* <div>
+                        {success}
+                        {error}
+                    </div> */}
                 </div>
             </div>
         </nav>

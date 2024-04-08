@@ -9,12 +9,11 @@ const Register = () => {
     const handleUserForm = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        // console.log(form)
         const name = form.get('name');
-        const photoUrl = form.get('url');
+        const photoURL = form.get('url');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, email, password, photoUrl);
+        console.log(name, email, password, photoURL);
 
         createUser(email, password)
             .then(result => {
@@ -43,7 +42,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="url" name="url" placeholder="Photo URL" className="input input-bordered" />
+                        <input type="url" name="photoURL" placeholder="Photo URL" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
