@@ -4,9 +4,11 @@ import Footer from '../Pages/Footer/Footer';
 
 const Root = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+        <div>
+            <div>
+                <Navbar></Navbar>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
