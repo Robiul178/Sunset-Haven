@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from '../../../assets/logo.png';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { BiSolidEditLocation, BiSolidLocationPlus } from "react-icons/bi";
+import { BsMap, BsPhone } from "react-icons/bs";
 
 
 const Navbar = () => {
@@ -43,8 +45,39 @@ const Navbar = () => {
 
 
     return (
-        <nav>
-            <div className="navbar fixed z-10  mt-4">
+        <nav className="">
+            <div className="border-b border-black">
+                <div className="flex justify-between py-4 px-12">
+                    <div>
+                        <span className="flex gap-2">
+                            <BiSolidLocationPlus className="text-2xl"></BiSolidLocationPlus>
+                            <p className="text-lg pr-12">Alison Street,10090,Canada</p>
+                            <BsPhone className="text-2xl"></BsPhone>
+                            <p className="text-lg">997-889-0987</p>
+                        </span>
+                    </div>
+                    <div className="flex gap-4">
+                        <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+                            <div className="avatar">
+                                <div className="w-10 rounded-full ring-0">
+                                    <img src={user?.photoURL} />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            {
+                                user ?
+                                    <button onClick={handleLogOut} className="mt-2">Log Out</button>
+                                    :
+                                    <Link to='/login'>
+                                        <button className="mt-2">Login \ Register</button>
+                                    </Link>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="navbar bg-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,7 +93,7 @@ const Navbar = () => {
                             alt=""
                             className="w-20" />
                         <Link to='/' className="text-4xl font-semibold mt-4 text-blue-950">
-                            BuildCraft
+                            Sunset Haven
                         </Link>
                     </div>
                 </div>
@@ -70,23 +103,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                    <div className="lg:tooltip" data-tip={user?.displayName}>
-                        <div className="avatar">
-                            <div className="w-12 rounded-full ring ring-blue-950">
-                                <img src={user?.photoURL} />
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        {
-                            user ?
-                                <button onClick={handleLogOut} className="btn btn-outline">Log Out</button>
-                                :
-                                <Link to='/login'>
-                                    <button className="btn btn-outline">LogIn</button>
-                                </Link>
-                        }
-                    </div>
+                    <button className="btn btn-primary text-xl">Shedule a Visit</button>
                 </div>
             </div>
         </nav>

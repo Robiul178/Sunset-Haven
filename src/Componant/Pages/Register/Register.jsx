@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import Navbar from "../Navbar/Navbar";
+// import Navbar from "../Navbar/Navbar";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const Register = () => {
                 console.log(errorMessage)
             })
     };
-    console.log('registerUser', registerUser)
+    // console.log('registerUser', registerUser)
 
 
     return (

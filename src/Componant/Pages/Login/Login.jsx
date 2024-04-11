@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
     const { logInUser, singInUsingGoogle, gitHubLogIn } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
-    // const [loginUser, setLogInUser] = useState('');
 
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleUserLogInForm = e => {
         e.preventDefault();
@@ -20,6 +21,7 @@ const Login = () => {
             .then(result => {
                 setSuccess('LogIn SuccessFully')
                 console.log(result.user)
+                navigate(location?.state ? location.state : '/')
             }).catch(error => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
@@ -32,6 +34,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate(location?.state ? location.state : '/')
             }).catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
@@ -48,6 +51,9 @@ const Login = () => {
                 console.log(errorMessage)
             });
     }
+
+
+    console.log(location, navigate)
 
     return (
         <div className="max-w-3xl mx-auto">
