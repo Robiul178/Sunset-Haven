@@ -4,6 +4,7 @@ import slide2 from '../../../assets/slide2.jpeg'
 import slide3 from '../../../assets/slide3.jpeg'
 import Service from '../Service/Service';
 import About from '../About/About';
+import Estates from '../Estates/Estates';
 
 const Home = () => {
     return (
@@ -49,6 +50,7 @@ const Home = () => {
             </div>
             <Service></Service>
             <About></About>
+            <Estates></Estates>
         </div>
 
     );

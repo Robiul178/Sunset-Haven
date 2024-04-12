@@ -7,13 +7,15 @@
         "price": "$2,500,000",
         "status": "sale",
         "area": "5000 sq ft",
+        "bedrooms": 5,
+        "bathrooms": 6,
         "location": "Malibu, California",
         "facilities": [
             "Swimming Pool",
             "Spa",
             "Home Theater"
         ],
-        "image": "https://example.com/luxurious-villa.jpg",
+        "image": "/public/img/estates1.png",
         "button": "View Property"
     },
     {
@@ -24,13 +26,15 @@
         "price": "$5,000/month",
         "status": "rent",
         "area": "1200 sq ft",
+        "bedrooms": 5,
+        "bathrooms": 6,
         "location": "New York City, New York",
         "facilities": [
             "Gym",
             "Rooftop Terrace",
             "Concierge Service"
         ],
-        "image": "https://example.com/modern-apartment.jpg",
+        "image": "/public/img/estates2.png",
         "button": "View Property"
     },
     {
@@ -47,7 +51,7 @@
             "Garden",
             "Outdoor Patio"
         ],
-        "image": "https://example.com/cozy-cottage.jpg",
+        "image": "/public/img/estates5.jpg",
         "button": "View Property"
     },
     {
@@ -58,13 +62,15 @@
         "price": "$700,000",
         "status": "sale",
         "area": "3000 sq ft",
+        "bedrooms": 5,
+        "bathrooms": 6,
         "location": "Denver, Colorado",
         "facilities": [
             "Family Room",
             "Outdoor Deck",
             "Garage"
         ],
-        "image": "https://example.com/spacious-family-home.jpg",
+        "image": "/public/img/estates3.png",
         "button": "View Property"
     },
     {
@@ -75,13 +81,15 @@
         "price": "$1,200,000",
         "status": "sale",
         "area": "1800 sq ft",
+        "bedrooms": 5,
+        "bathrooms": 6,
         "location": "Charleston, South Carolina",
         "facilities": [
             "Open Floor Plan",
             "Exposed Brick Walls",
             "City Views"
         ],
-        "image": "https://example.com/chic-loft.jpg",
+        "image": "/public/img/estates4.png",
         "button": "View Property"
     },
     {
@@ -92,13 +100,15 @@
         "price": "$8,500/month",
         "status": "rent",
         "area": "2500 sq ft",
+        "bedrooms": 5,
+        "bathrooms": 6,
         "location": "Los Angeles, California",
         "facilities": [
             "Private Elevator",
             "Wraparound Terrace",
             "24/7 Security"
         ],
-        "image": "https://example.com/exclusive-penthouse.jpg",
+        "image": "/public/img/estates6.jpg",
         "button": "View Property"
     }
 ]
