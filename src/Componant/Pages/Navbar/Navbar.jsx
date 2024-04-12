@@ -2,8 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from '../../../assets/logo.png';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { BiSolidEditLocation, BiSolidLocationPlus } from "react-icons/bi";
-import { BsMap, BsPhone } from "react-icons/bs";
+import { BiSolidLocationPlus } from "react-icons/bi";
+import { BsPhone } from "react-icons/bs";
 
 
 const Navbar = () => {
@@ -33,6 +33,16 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
+                to="/estates"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                }
+            >
+                ESTATES
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
                 to="/about"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
@@ -45,9 +55,9 @@ const Navbar = () => {
 
 
     return (
-        <nav className="">
+        <nav>
             <div className="border-b border-black">
-                <div className="flex justify-between py-4 px-12">
+                <div className="flex justify-between pt-2 px-12">
                     <div>
                         <span className="flex gap-2">
                             <BiSolidLocationPlus className="text-2xl"></BiSolidLocationPlus>
@@ -59,7 +69,7 @@ const Navbar = () => {
                     <div className="flex gap-4">
                         <div className="tooltip tooltip-left" data-tip={user?.displayName}>
                             <div className="avatar">
-                                <div className="w-10 rounded-full ring-0">
+                                <div className="w-10 relative rounded-full ring-0">
                                     <img src={user?.photoURL} />
                                 </div>
                             </div>
@@ -103,7 +113,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                    <button className="btn btn-primary text-xl">Shedule a Visit</button>
+                    <p className="btn w-52 bg-purple-400 text-xl ">Shedule a Visit</p>
                 </div>
             </div>
         </nav>

@@ -11,6 +11,7 @@ import About from './Componant/Pages/About/About.jsx';
 import Login from './Componant/Pages/Login/Login.jsx';
 import Register from './Componant/Pages/Register/Register.jsx';
 import AuthProvider from './Componant/AuthProvider/AuthProvider.jsx';
+import Estates from './Componant/Pages/Estates/Estates.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+      },
+      {
+        path: '/estates',
+        element: <Estates></Estates>
       },
       {
         path: '/about',

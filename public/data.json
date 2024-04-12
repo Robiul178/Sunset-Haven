@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Luxurious Villa with Ocean View",
+        "segment_name": "Villa",
+        "description": "Experience luxury living in this exquisite villa with breathtaking ocean views.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Malibu, California",
+        "facilities": [
+            "Swimming Pool",
+            "Spa",
+            "Home Theater"
+        ],
+        "image": "https://example.com/luxurious-villa.jpg",
+        "button": "View Property"
+    },
+    {
+        "id": 2,
+        "estate_title": "Modern Apartment in Downtown",
+        "segment_name": "Apartment",
+        "description": "Discover urban living at its finest in this sleek and stylish downtown apartment.",
+        "price": "$5,000/month",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "New York City, New York",
+        "facilities": [
+            "Gym",
+            "Rooftop Terrace",
+            "Concierge Service"
+        ],
+        "image": "https://example.com/modern-apartment.jpg",
+        "button": "View Property"
+    },
+    {
+        "id": 3,
+        "estate_title": "Cozy Cottage in the Countryside",
+        "segment_name": "Cottage",
+        "description": "Escape to tranquility in this charming cottage nestled amidst scenic countryside.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Cotswolds, England",
+        "facilities": [
+            "Fireplace",
+            "Garden",
+            "Outdoor Patio"
+        ],
+        "image": "https://example.com/cozy-cottage.jpg",
+        "button": "View Property"
+    },
+    {
+        "id": 4,
+        "estate_title": "Spacious Family Home with Mountain Views",
+        "segment_name": "House",
+        "description": "Create lasting memories in this spacious family home boasting stunning mountain views.",
+        "price": "$700,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Denver, Colorado",
+        "facilities": [
+            "Family Room",
+            "Outdoor Deck",
+            "Garage"
+        ],
+        "image": "https://example.com/spacious-family-home.jpg",
+        "button": "View Property"
+    },
+    {
+        "id": 5,
+        "estate_title": "Chic Loft in Historic District",
+        "segment_name": "Loft",
+        "description": "Live in style in this chic loft located in the heart of a vibrant historic district.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Charleston, South Carolina",
+        "facilities": [
+            "Open Floor Plan",
+            "Exposed Brick Walls",
+            "City Views"
+        ],
+        "image": "https://example.com/chic-loft.jpg",
+        "button": "View Property"
+    },
+    {
+        "id": 6,
+        "estate_title": "Exclusive Penthouse with Skyline Views",
+        "segment_name": "Penthouse",
+        "description": "Indulge in luxury living in this exclusive penthouse offering breathtaking skyline views.",
+        "price": "$8,500/month",
+        "status": "rent",
+        "area": "2500 sq ft",
+        "location": "Los Angeles, California",
+        "facilities": [
+            "Private Elevator",
+            "Wraparound Terrace",
+            "24/7 Security"
+        ],
+        "image": "https://example.com/exclusive-penthouse.jpg",
+        "button": "View Property"
+    }
+]
