@@ -67,27 +67,34 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div className="flex gap-4">
-                        <div className="tooltip tooltip-left" data-tip={user?.displayName}>
-                            <div className="avatar">
-                                <div className="w-10 relative rounded-full ring-0">
-                                    <img src={user?.photoURL} />
-                                </div>
-                            </div>
-                        </div>
                         <div>
                             {
                                 user ?
-                                    <button onClick={handleLogOut} className="mt-2">Log Out</button>
+                                    <>
+                                        <div className="flex gap-3">
+                                            <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+                                                <div className="avatar">
+                                                    <div className="w-10 relative rounded-full ring-0">
+                                                        <img src={user?.photoURL} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button onClick={handleLogOut} className="mt-2">Log Out</button>
+                                            </div>
+                                        </div>
+                                    </>
                                     :
-                                    <Link to='/login'>
-                                        <button className="mt-2">Login \ Register</button>
-                                    </Link>
+                                    <>
+                                        <Link to='/login'>
+                                            <button className="mt-2">Login \ Register</button>
+                                        </Link></>
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="navbar bg-white">
+            <div className="navbar bg-white px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -98,10 +105,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex">
-                        <img
+                        {/* <img
                             src={Logo}
                             alt=""
-                            className="w-20" />
+                            className="w-20" /> */}
                         <Link to='/' className="text-4xl font-semibold mt-4 text-blue-950">
                             Sunset Haven
                         </Link>
@@ -113,7 +120,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                    <p className="btn w-52 bg-purple-400 text-xl ">Shedule a Visit</p>
+                    <button className="p-4 border hover:bg-purple-500 hover:text-white">Shedule a Visit</button>
                 </div>
             </div>
         </nav>

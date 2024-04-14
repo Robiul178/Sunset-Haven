@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 // import Navbar from "../Navbar/Navbar";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setReload } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
 
     const handleUserForm = e => {
@@ -15,16 +16,23 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
+        // form.set('displayName', name)
+
         createUser(email, password)
             .then(result => {
                 setSuccess('User Create SuccessFully')
-                console.log(result.user)
+                const user = result.user;
+                updateProfile(user, { displayName: name, photoURL: photoURL }).then(() => {
+                    console.log('update profile');
+                    setReload(true)
+                })
+
             }).catch(error => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
-            })
+            });
     };
-    // console.log('registerUser', registerUser)
+    // console.log('registerUser', regUser)
 
 
     return (

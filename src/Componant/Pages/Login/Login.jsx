@@ -4,9 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
     const { logInUser, singInUsingGoogle, gitHubLogIn } = useContext(AuthContext);
-    const [success, setSuccess] = useState('');
+
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -19,12 +22,13 @@ const Login = () => {
 
         logInUser(email, password)
             .then(result => {
-                setSuccess('LogIn SuccessFully')
+                toast('LogIn SuccessFully')
                 console.log(result.user)
                 navigate(location?.state ? location.state : '/')
             }).catch(error => {
                 const errorMessage = error.message;
-                console.log(errorMessage)
+                // console.log(errorMessage)
+                toast(errorMessage);
             });
     };
 
@@ -33,11 +37,11 @@ const Login = () => {
         singInUsingGoogle()
             .then((result) => {
                 const user = result.user;
-                console.log(user)
+                console.log(user);
                 navigate(location?.state ? location.state : '/')
             }).catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage)
+                toast(errorMessage)
             });
     }
     const handleGitHubLogIn = e => {
@@ -93,6 +97,8 @@ const Login = () => {
             <div>
 
             </div>
+
+            <ToastContainer />
         </div>
     );
 };
