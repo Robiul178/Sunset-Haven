@@ -1,9 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import Logo from '../../../assets/logo.png';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { BiSolidLocationPlus } from "react-icons/bi";
 import { BsPhone } from "react-icons/bs";
+import { FaLocationDot } from "react-icons/fa6";
 
 
 const Navbar = () => {
@@ -60,7 +59,7 @@ const Navbar = () => {
                 <div className="flex justify-between pt-2 px-12">
                     <div>
                         <span className="flex gap-2">
-                            <BiSolidLocationPlus className="text-2xl"></BiSolidLocationPlus>
+                            <FaLocationDot className="text-2xl" />
                             <p className="text-lg pr-12">Alison Street,10090,Canada</p>
                             <BsPhone className="text-2xl"></BsPhone>
                             <p className="text-lg">997-889-0987</p>

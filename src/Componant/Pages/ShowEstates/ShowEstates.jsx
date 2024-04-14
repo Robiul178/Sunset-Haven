@@ -1,9 +1,12 @@
-import { BsMap } from "react-icons/bs";
+
+import { FaBath, FaBed, FaLocationDot } from "react-icons/fa6";
+import { FiSquare } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 
 const ShowEstates = ({ estates }) => {
 
-    const { image, estate_title, description, price, area, location } = estates;
+    const { id, image, estate_title, description, price, area, location, bedrooms, bathrooms } = estates;
 
     return (
         <div>
@@ -14,15 +17,31 @@ const ShowEstates = ({ estates }) => {
                 </figure>
                 <div className="card-body">
                     <span className="flex gap-3">
-                        <BsMap></BsMap><p>{location}</p>
+                        <FaLocationDot />  <p>{location}</p>
                     </span>
                     <h2 className="card-title text-2xl">{estate_title}</h2>
-                    <span>
+                    <div className="flex justify-between border p-4">
+                        <span className="flex gap-2">
+                            <FaBed />
+                            {bedrooms} bedrooms
+                        </span>
+                        <span className="flex gap-2">
+                            <FaBath />
+                            {bathrooms} bathrooms
+                        </span>
+                        <span className="flex gap-2">
+                            <FiSquare />
+                            {area}
+                        </span>
+                    </div>
 
-                    </span>
                     <div className="flex justify-between">
-                        <h2>${price}</h2>
-                        <button className="border p-4">View Properties</button>
+                        <h2 className="font-semibold">{price}</h2>
+                        <Link
+                            to={`/estateDetails/${id}`}
+
+                        >
+                            <button className="border p-4 hover:bg-white hover:text-black">View Properties</button></Link>
                     </div>
                 </div>
             </div>
