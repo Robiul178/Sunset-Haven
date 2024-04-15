@@ -12,12 +12,12 @@ const Estates = () => {
     return (
         <div>
             <div className="px-12">
-                <h2 className="text-2xl text-purple-600 pb-4">PROPERTIES</h2>
-                <h2 className="text-5xl font-bold mb-6">
+                <h2 className="text-xl text-purple-600 pb-4">PROPERTIES</h2>
+                <h2 className="text-4xl font-bold mb-6">
                     Explore Our Latest & <br /> Featured Properties
                 </h2>
             </div>
-            <div>
+            <div className="pb-10">
                 <Marquee pauseOnHover={Boolean}>
                     {
                         data?.map(estates =>

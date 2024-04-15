@@ -12,8 +12,8 @@ const About = () => {
 
                 <div>
                     <h2 className="text-xl text-purple-600 mb-6">ABOUT US</h2>
-                    <h2 className="text-6xl font-bold leading-12 mb-6 ">We Are Top Rated Real <br /> Estate Company <br /> Worldwide</h2>
-                    <p className='text-2xl'>Realco Real Estate Company we understand that real estate transactions are <br />
+                    <h2 className="text-4xl font-bold leading-12 mb-6 ">We Are Top Rated Real <br /> Estate Company <br /> Worldwide</h2>
+                    <p className='text-xl'>Realco Real Estate Company we understand that real estate transactions are <br />
                         not just about properties they are about people and their dreams. That's why <br /> we take the time to listen to your unique needs and aspirations</p>
                     <div className="md:flex justify-between py-6">
                         <div className='mb-4'>

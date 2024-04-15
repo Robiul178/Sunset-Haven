@@ -44,6 +44,8 @@
         "description": "Escape to tranquility in this charming cottage nestled amidst scenic countryside.",
         "price": "$350,000",
         "status": "sale",
+        "bedrooms": 3,
+        "bathrooms": 2,
         "area": "1500 sq ft",
         "location": "Cotswolds, England",
         "facilities": [
@@ -63,7 +65,7 @@
         "status": "sale",
         "area": "3000 sq ft",
         "bedrooms": 5,
-        "bathrooms": 6,
+        "bathrooms": 4,
         "location": "Denver, Colorado",
         "facilities": [
             "Family Room",

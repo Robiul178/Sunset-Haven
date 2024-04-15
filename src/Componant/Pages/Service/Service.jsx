@@ -11,7 +11,7 @@ const Service = () => {
                 <div  >
                     <div className=' md:h-12 max-w-[800px] p-4'>
                         <div tabIndex={0} className="collapse collapse-plus border-b border-black p-4 mb-6">
-                            <div className="collapse-title text-4xl text-start font-medium">
+                            <div className="collapse-title text-3xl text-start font-medium">
                                 <p >Luxury Apartment</p>
                             </div>
                             <div className="collapse-content text-start">
@@ -24,7 +24,7 @@ const Service = () => {
                             </div>
                         </div>
                         <div tabIndex={0} className="collapse collapse-plus border-b border-black p-4 mb-6">
-                            <div className="collapse-title text-4xl text-start font-medium">
+                            <div className="collapse-title text-3xl text-start font-medium">
                                 <p >Architecture Design</p>
                             </div>
                             <div className="collapse-content text-start">
@@ -37,7 +37,7 @@ const Service = () => {
                             </div>
                         </div>
                         <div tabIndex={0} className="collapse collapse-plus border-b border-black p-4 mb-6">
-                            <div className="collapse-title text-4xl text-start font-medium">
+                            <div className="collapse-title text-3xl text-start font-medium">
                                 <p >Extra strong security</p>
                             </div>
                             <div className="collapse-content text-start">
@@ -50,7 +50,7 @@ const Service = () => {
                             </div>
                         </div>
                         <div tabIndex={0} className="collapse collapse-plus border-b border-black p-4">
-                            <div className="collapse-title text-4xl text-start font-medium">
+                            <div className="collapse-title text-3xl text-start font-medium">
                                 <p >Home Remodeling</p>
                             </div>
                             <div className="collapse-content text-start">

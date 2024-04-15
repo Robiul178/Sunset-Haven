@@ -11,9 +11,8 @@ const ShowEstates = ({ estates }) => {
     return (
         <div>
             <div className="card border mr-14 hover:bg-purple-700 hover:text-white">
-
                 <figure className="px-10 pt-10">
-                    <img src={image} alt="Shoes" className="rounded-xl" />
+                    <img src={image} alt="#" className="rounded-xl w-[300px] h-[300px]" />
                 </figure>
                 <div className="card-body">
                     <span className="flex gap-3">
