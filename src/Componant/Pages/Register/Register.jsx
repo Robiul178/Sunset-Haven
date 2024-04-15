@@ -1,38 +1,42 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
-// import Navbar from "../Navbar/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
     const { createUser, setReload } = useContext(AuthContext);
-    const [success, setSuccess] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
 
     const handleUserForm = e => {
         e.preventDefault();
+
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const photoURL = form.get('photoURL');
         const email = form.get('email');
         const password = form.get('password');
 
-        // form.set('displayName', name)
 
         createUser(email, password)
             .then(result => {
-                setSuccess('User Create SuccessFully')
                 const user = result.user;
                 updateProfile(user, { displayName: name, photoURL: photoURL }).then(() => {
-                    console.log('update profile');
                     setReload(true)
-                })
+                });
+                toast('User Create SuccessFully');
+                navigate(location?.state ? location.state : '/')
 
             }).catch(error => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
             });
     };
-    // console.log('registerUser', regUser)
 
 
     return (
@@ -73,7 +77,7 @@ const Register = () => {
                         </Link></p>
                     </div>
                     <div>
-                        {success}
+                        <ToastContainer></ToastContainer>
                     </div>
                 </form>
             </div>

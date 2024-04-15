@@ -1,15 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const { logInUser, singInUsingGoogle, gitHubLogIn } = useContext(AuthContext);
-
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -23,8 +21,9 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 toast('LogIn SuccessFully')
-                console.log(result.user)
-                navigate(location?.state ? location.state : '/')
+                if (result.user) {
+                    navigate(location?.state ? location.state : '/')
+                }
             }).catch(error => {
                 const errorMessage = error.message;
                 // console.log(errorMessage)
@@ -33,12 +32,13 @@ const Login = () => {
     };
 
     const handleGoogleSingIn = e => {
-        e.preventDefault()
+        e.preventDefault();
         singInUsingGoogle()
-            .then((result) => {
-                const user = result.user;
-                console.log(user);
-                navigate(location?.state ? location.state : '/')
+            .then(result => {
+                toast('LogIn SuccessFully')
+                if (result.user) {
+                    navigate(location?.state ? location.state : '/')
+                }
             }).catch((error) => {
                 const errorMessage = error.message;
                 toast(errorMessage)
@@ -47,9 +47,11 @@ const Login = () => {
     const handleGitHubLogIn = e => {
         e.preventDefault()
         gitHubLogIn()
-            .then((result) => {
-                const user = result.user;
-                console.log(user)
+            .then(result => {
+                toast('LogIn SuccessFully')
+                if (result.user) {
+                    navigate(location?.state ? location.state : '/')
+                }
             }).catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
@@ -60,7 +62,7 @@ const Login = () => {
     console.log(location, navigate)
 
     return (
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto py-12">
             <h2 className="text-4xl font-semibold text-center">Login here</h2>
             <form onSubmit={handleUserLogInForm} className="card-body">
                 <div className="form-control">

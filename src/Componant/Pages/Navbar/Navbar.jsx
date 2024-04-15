@@ -3,22 +3,22 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { BsPhone } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [success, setSuccess] = useState('');
-    const [error, setError] = useState('');
+
+
 
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                setSuccess('Sign-out successful.')
+                toast('Sign-out successful.')
             }).catch((error) => {
-                setError(error)
+                toast(error)
             });
     }
-
     const links = <>
         <li>
             <NavLink
@@ -48,6 +48,16 @@ const Navbar = () => {
                 }
             >
                 ABOUT
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/update"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                }
+            >
+                update
             </NavLink>
         </li>
     </>
@@ -122,6 +132,7 @@ const Navbar = () => {
                     <button className="p-4 border hover:bg-purple-500 hover:text-white">Shedule a Visit</button>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </nav>
     );
 };

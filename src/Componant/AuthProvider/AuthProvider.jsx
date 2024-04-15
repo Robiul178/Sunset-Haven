@@ -30,6 +30,12 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, githubProvider);
     }
 
+    const updateUserProfile = (name, image) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: image
+        })
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -55,6 +61,7 @@ const AuthProvider = ({ children }) => {
         singInUsingGoogle,
         gitHubLogIn,
         logOut,
+        updateUserProfile,
         setReload
     }
     return (

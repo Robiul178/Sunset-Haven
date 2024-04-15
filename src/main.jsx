@@ -13,6 +13,8 @@ import Register from './Componant/Pages/Register/Register.jsx';
 import AuthProvider from './Componant/AuthProvider/AuthProvider.jsx';
 import Estates from './Componant/Pages/Estates/Estates.jsx';
 import EstateDetails from './Componant/Pages/EstateDetails/EstateDetails.jsx';
+import PrivateRoute from './Componant/PrivateRoute/PrivateRoute.jsx';
+import UpdateProfile from './Componant/Pages/UpdateProfile/UpdateProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,8 +42,14 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
+        path: '/update',
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
         path: '/estateDetails/:id',
-        element: <EstateDetails></EstateDetails>
+        element: <PrivateRoute>
+          <EstateDetails></EstateDetails>
+        </PrivateRoute>
       }
 
     ]

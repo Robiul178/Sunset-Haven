@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ShowEstates = ({ estates }) => {
 
-    const { id, image, estate_title, description, price, area, location, bedrooms, bathrooms } = estates;
+    const { id, status, image, estate_title, description, price, area, location, bedrooms, bathrooms } = estates;
 
     return (
         <div>
@@ -17,8 +17,10 @@ const ShowEstates = ({ estates }) => {
                 <div className="card-body">
                     <span className="flex gap-3">
                         <FaLocationDot />  <p>{location}</p>
+                        <h2>{status}</h2>
                     </span>
                     <h2 className="card-title text-2xl">{estate_title}</h2>
+                    <h2>{status}</h2>
                     <div className="flex justify-between border p-4">
                         <span className="flex gap-2">
                             <FaBed />
@@ -35,7 +37,7 @@ const ShowEstates = ({ estates }) => {
                     </div>
 
                     <div className="flex justify-between">
-                        <h2 className="font-semibold">{price}</h2>
+                        <h2 className="font-semibold border pt-4 px-4">{price}</h2>
                         <Link
                             to={`/estateDetails/${id}`}
 
