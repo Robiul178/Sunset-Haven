@@ -24,7 +24,7 @@ const Navbar = () => {
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                    isPending ? "pending" : isActive ? "border  border-green-500 " : ""
                 }
             >
                 HOME
@@ -34,7 +34,7 @@ const Navbar = () => {
             <NavLink
                 to="/estates"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                    isPending ? "pending" : isActive ? "border  border-green-500 " : ""
                 }
             >
                 ESTATES
@@ -44,22 +44,22 @@ const Navbar = () => {
             <NavLink
                 to="/about"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                    isPending ? "pending" : isActive ? "border  border-green-500 " : ""
                 }
             >
                 ABOUT
             </NavLink>
         </li>
-        <li>
+        {/* <li>
             <NavLink
                 to="/update"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
                 }
             >
-                update
+                Update Profile
             </NavLink>
-        </li>
+        </li> */}
     </>
 
 
@@ -69,10 +69,10 @@ const Navbar = () => {
                 <div className="flex justify-between pt-2 px-12">
                     <div>
                         <span className="flex gap-2">
-                            <FaLocationDot className="text-2xl" />
-                            <p className="text-lg pr-12">Alison Street,10090,Canada</p>
-                            <BsPhone className="text-2xl"></BsPhone>
-                            <p className="text-lg">997-889-0987</p>
+                            <FaLocationDot className="text-xl" />
+                            <p className="pr-12">Alison Street,10090,Canada</p>
+                            <BsPhone className="mt-1"></BsPhone>
+                            <p >997-889-0987</p>
                         </span>
                     </div>
                     <div className="flex gap-4">
@@ -129,7 +129,28 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                    <button className="p-4 border hover:bg-purple-500 hover:text-white">Shedule a Visit</button>
+
+                    {
+                        user ?
+                            <NavLink
+                                to="/update"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "border-t-2 border-b-2 border-t-red-500 border-b-blue-900" : ""
+                                }
+                            >
+                                Update Profile
+                            </NavLink>
+                            :
+                            <Link to='/login'>
+                                <button className="p-4 border hover:bg-purple-500 hover:text-white">Update Profile</button>
+                            </Link>
+
+
+
+
+                    }
+
+
                 </div>
             </div>
             <ToastContainer></ToastContainer>

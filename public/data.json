@@ -15,7 +15,7 @@
             "Spa",
             "Home Theater"
         ],
-        "image": "/public/img/estates1.png",
+        "image": "/img/estates1.png",
         "button": "View Property"
     },
     {
@@ -34,7 +34,7 @@
             "Rooftop Terrace",
             "Concierge Service"
         ],
-        "image": "/public/img/estates2.png",
+        "image": "/img/estates2.png",
         "button": "View Property"
     },
     {
@@ -53,7 +53,7 @@
             "Garden",
             "Outdoor Patio"
         ],
-        "image": "/public/img/estates5.jpg",
+        "image": "/img/estates5.jpg",
         "button": "View Property"
     },
     {
@@ -72,7 +72,7 @@
             "Outdoor Deck",
             "Garage"
         ],
-        "image": "/public/img/estates3.png",
+        "image": "/img/estates3.png",
         "button": "View Property"
     },
     {
@@ -91,7 +91,7 @@
             "Exposed Brick Walls",
             "City Views"
         ],
-        "image": "/public/img/estates4.png",
+        "image": "/img/estates4.png",
         "button": "View Property"
     },
     {
@@ -110,7 +110,7 @@
             "Wraparound Terrace",
             "24/7 Security"
         ],
-        "image": "/public/img/estates6.jpg",
+        "image": "/img/estates6.jpg",
         "button": "View Property"
     }
 ]

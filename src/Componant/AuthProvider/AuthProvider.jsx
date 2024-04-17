@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
     }, [reload]);
 
     useEffect(() => {
-        fetch('/public/data.json')
+        fetch('/data.json')
             .then(res => res.json())
             .then(data => setData(data))
     }, [])

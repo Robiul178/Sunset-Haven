@@ -18,10 +18,10 @@ const UpdateProfile = () => {
 
         updateUserProfile(name, photoURL)
             .then(() => {
+                setReload(true)
                 toast('Update Profile');
                 navigate(location?.state ? location.state : '/');
 
-                setReload(true)
             })
     }
 

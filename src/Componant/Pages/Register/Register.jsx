@@ -22,6 +22,12 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (passwordRegex.test(password)) {
+            return
+        } else {
+            toast("Password must have Uppercase and Lowercase with 6 character");
+        }
 
         createUser(email, password)
             .then(result => {
