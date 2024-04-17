@@ -10,17 +10,20 @@ const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const [data, setData] = useState();
-    const [reload, setReload] = useState(false)
+    const [reload, setReload] = useState(true)
 
 
 
     const createUser = (email, password) => {
+        setReload(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const logInUser = (email, password) => {
+        setReload(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
     const singInUsingGoogle = () => {
+        setReload(true)
         return signInWithPopup(auth, provider);
     }
     const logOut = () => {
@@ -41,6 +44,7 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             console.log(user, 'current User From On auth change');
             setUser(user);
+            setReload(false)
         });
         return () => {
             unSubscribe();
@@ -62,7 +66,8 @@ const AuthProvider = ({ children }) => {
         gitHubLogIn,
         logOut,
         updateUserProfile,
-        setReload
+        setReload,
+        reload
     }
     return (
         <AuthContext.Provider value={authInfo}>

@@ -15,11 +15,13 @@ import Estates from './Componant/Pages/Estates/Estates.jsx';
 import EstateDetails from './Componant/Pages/EstateDetails/EstateDetails.jsx';
 import PrivateRoute from './Componant/PrivateRoute/PrivateRoute.jsx';
 import UpdateProfile from './Componant/Pages/UpdateProfile/UpdateProfile.jsx';
+import NotFound from './Componant/Pages/NotFound/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: '/',
@@ -31,7 +33,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About></About>
+        element: <PrivateRoute>
+          <About></About>
+        </PrivateRoute>
       },
       {
         path: '/login',

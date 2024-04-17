@@ -4,6 +4,10 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 
 const Register = () => {
@@ -22,11 +26,15 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        if (passwordRegex.test(password)) {
-            return
-        } else {
-            toast("Password must have Uppercase and Lowercase with 6 character");
+        if (password.length < 6) {
+            toast.warning('Password should be at least 6 character')
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            toast.error('Password at least one Uppercae')
+            return;
+        } else if (!/[a-z]/.test(password)) {
+            toast.alert('password At least one lowercase')
+            return;
         }
 
         createUser(email, password)
@@ -42,11 +50,14 @@ const Register = () => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
             });
+
     };
 
 
     return (
-        <div>
+        <div data-aos="fade-down"
+            data-aos-duration="1500"
+        >
             <div className="max-w-3xl mx-auto">
                 <h2 className="text-4xl font-semibold text-center">Registration here</h2>
                 <form onSubmit={handleUserForm} className="card-body">

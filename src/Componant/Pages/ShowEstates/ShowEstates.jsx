@@ -2,17 +2,18 @@
 import { FaBath, FaBed, FaLocationDot } from "react-icons/fa6";
 import { FiSquare } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const ShowEstates = ({ estates }) => {
 
-    const { id, status, image, estate_title, description, price, area, location, bedrooms, bathrooms } = estates;
+    const { id, status, image, estate_title, price, area, location, bedrooms, bathrooms } = estates;
 
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <div className="card border mr-14 hover:bg-purple-700 hover:text-white">
                 <figure className="px-10 pt-10">
-                    <img src={image} alt="#" className="rounded-xl w-[300px] h-[300px]" />
+                    <img src={image} alt="#" className="rounded-xl max-w-[300px] h-[300px]" />
                 </figure>
                 <div className="card-body">
                     <span className="flex gap-3">
@@ -50,4 +51,9 @@ const ShowEstates = ({ estates }) => {
     );
 };
 
+
+
+ShowEstates.propTypes = {
+    estates: PropTypes.bool
+};
 export default ShowEstates;

@@ -7,10 +7,11 @@ const PrivateRoute = ({ children }) => {
     const { user, setReload } = useContext(AuthContext);
     const location = useLocation();
 
-
     if (!user) {
-        return <Navigate to='/login' state={location.pathname || '/'} /> && setReload(true)
+        return <Navigate to='/login' state={location.pathname} />
     }
+
+
     return (
         <div>
             {children}

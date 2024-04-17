@@ -70,7 +70,7 @@ const Navbar = () => {
                     <div>
                         <span className="flex gap-2">
                             <FaLocationDot className="text-xl" />
-                            <p className="pr-12">Alison Street,10090,Canada</p>
+                            <p className="md:pr-12">Alison Street,10090,Canada</p>
                             <BsPhone className="mt-1"></BsPhone>
                             <p >997-889-0987</p>
                         </span>
@@ -96,7 +96,7 @@ const Navbar = () => {
                                     :
                                     <>
                                         <Link to='/login'>
-                                            <button className="mt-2">Login \ Register</button>
+                                            <button >Login \ Register</button>
                                         </Link></>
                             }
                         </div>
@@ -144,13 +144,7 @@ const Navbar = () => {
                             <Link to='/login'>
                                 <button className="p-4 border hover:bg-purple-500 hover:text-white">Update Profile</button>
                             </Link>
-
-
-
-
                     }
-
-
                 </div>
             </div>
             <ToastContainer></ToastContainer>
