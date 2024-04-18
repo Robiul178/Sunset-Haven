@@ -4,6 +4,7 @@ import slide2 from '../../../assets/slide2.jpeg'
 import slide3 from '../../../assets/slide3.jpeg'
 
 
+
 const Banner = () => {
 
     return (
@@ -51,6 +52,8 @@ const Banner = () => {
                     </div>
                 </div>
             </section>
+
+
         </div>
     );
 };
