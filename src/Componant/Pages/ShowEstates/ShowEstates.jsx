@@ -21,8 +21,8 @@ const ShowEstates = ({ estates }) => {
                         <h2>{status}</h2>
                     </span>
                     <h2 className="card-title text-2xl">{estate_title}</h2>
-                    <h2>{status}</h2>
-                    <div className="flex justify-between border p-4">
+
+                    <div className="flex justify-between border p-4 gap-4">
                         <span className="flex gap-2">
                             <FaBed />
                             {bedrooms} bedrooms
