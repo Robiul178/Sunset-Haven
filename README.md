@@ -10,6 +10,7 @@
 - react-icons
 - react-marquee
 - Animation.css
+- react-helmet
 
 
 ## Features:
@@ -17,7 +18,6 @@
 - Eye catching banner & animation
 - Without create account user can not see property details
 - User can update profile
-
 
 
 
