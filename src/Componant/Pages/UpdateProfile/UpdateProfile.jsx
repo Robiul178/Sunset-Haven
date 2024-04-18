@@ -30,21 +30,21 @@ const UpdateProfile = () => {
     return (
         <div>
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-4xl font-semibold text-center">Registration here</h2>
+                <h2 className="text-lg font-semibold text-center">Update Your Profile here</h2>
                 <form onSubmit={handleUpdateProfile} className="card-body">
                     <div className="form-control">
-                        <label className="label">
+                        {/* <label className="label">
                             <span className="label-text">Name</span>
-                        </label>
+                        </label> */}
                         <input type="text" name="name" placeholder="Your Name" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <label className="label">
+                        {/* <label className="label">
                             <span className="label-text">Photo URL</span>
-                        </label>
+                        </label> */}
                         <input type="url" name="photoURL" placeholder="Photo URL" className="input input-bordered" />
                     </div>
-                    <div className="form-control mt-6">
+                    <div className="form-control">
                         <button className="btn btn-primary">Update</button>
                     </div>
 

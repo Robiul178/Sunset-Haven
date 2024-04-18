@@ -25,31 +25,30 @@ const Login = () => {
             toast('Email is Incorrect')
         }
 
-
         logInUser(email, password)
             .then(result => {
-                toast('LogIn SuccessFully')
                 if (result.user) {
-                    navigate(location?.state ? location.state : '/')
+                    navigate(location?.state ? location.state : '/');
                 }
+                toast('LogIn SuccessFully')
             }).catch(error => {
                 const errorMessage = error.message;
-                // console.log(errorMessage)
                 toast(errorMessage);
             });
     };
 
     const handleGoogleSingIn = e => {
         e.preventDefault();
+
         singInUsingGoogle()
             .then(result => {
-                toast('LogIn SuccessFully')
+                toast('LogIn SuccessFully');
                 if (result.user) {
-                    navigate(location?.state ? location.state : '/')
+                    navigate(location?.state ? location.state : '/');
                 }
             }).catch((error) => {
                 const errorMessage = error.message;
-                toast(errorMessage)
+                toast(errorMessage);
             });
     }
     const handleGitHubLogIn = e => {
@@ -65,7 +64,6 @@ const Login = () => {
                 console.log(errorMessage)
             });
     }
-
 
 
     return (

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -14,7 +14,7 @@ const Register = () => {
     const { createUser, setReload } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-
+    const [showPassword, setShowPassword] = useState(false)
 
 
     const handleUserForm = e => {
@@ -27,13 +27,13 @@ const Register = () => {
         const password = form.get('password');
 
         if (password.length < 6) {
-            toast.warning('Password should be at least 6 character')
+            toast('Password must have 6 character');
             return;
         } else if (!/[A-Z]/.test(password)) {
-            toast.error('Password at least one Uppercae')
+            toast('Password must have 1 Upparcase character');
             return;
         } else if (!/[a-z]/.test(password)) {
-            toast.alert('password At least one lowercase')
+            toast('Password must have 1 lowercase character');
             return;
         }
 
@@ -41,14 +41,13 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 updateProfile(user, { displayName: name, photoURL: photoURL }).then(() => {
-                    setReload(true)
+                    setReload(true);
                 });
+                navigate(location?.state ? location.state : '/');
                 toast('User Create SuccessFully');
-                navigate(location?.state ? location.state : '/')
-
             }).catch(error => {
                 const errorMessage = error.message;
-                console.log(errorMessage)
+                console.log(errorMessage);
             });
 
     };
@@ -83,7 +82,11 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                        <input type={showPassword ? 'text' : 'password'}
+                            name="password"
+                            placeholder="Password"
+                            className="input input-bordered" required />
+                        <span onClick={() => setShowPassword(!showPassword)}>Show</span>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Registration</button>

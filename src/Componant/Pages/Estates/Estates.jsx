@@ -10,7 +10,7 @@ const Estates = () => {
     const { data } = useContext(AuthContext);
 
     return (
-        <div>
+        <div data-aos='zoom-in' data-aos-delay='500'>
             <div className="px-12">
                 <h2 className="text-xl text-purple-600 pb-4">PROPERTIES</h2>
                 <h2 className="text-4xl font-bold mb-6">

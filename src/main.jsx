@@ -16,6 +16,7 @@ import EstateDetails from './Componant/Pages/EstateDetails/EstateDetails.jsx';
 import PrivateRoute from './Componant/PrivateRoute/PrivateRoute.jsx';
 import UpdateProfile from './Componant/Pages/UpdateProfile/UpdateProfile.jsx';
 import NotFound from './Componant/Pages/NotFound/NotFound.jsx';
+import MyProfile from './Componant/Pages/MyProfile/MyProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
         path: '/estateDetails/:id',
         element: <PrivateRoute>
           <EstateDetails></EstateDetails>
+        </PrivateRoute>
+      },
+      {
+        path: '/myprofile',
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
         </PrivateRoute>
       }
 

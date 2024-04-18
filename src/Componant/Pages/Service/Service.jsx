@@ -2,7 +2,9 @@ import service from '../../../assets/service.png'
 
 const Service = () => {
     return (
-        <div data-aos='fade-out' data-aos-delay="1000" className="text-center py-12">
+        <div
+            data-aos='fade-in' data-aos-delay="500"
+            className="text-center py-12 animate__animated animate__animate__backOutDown">
             <div>
                 <h2 className="text-xl text-blue-600">SERVICE</h2>
                 <h2 className="text-5xl font-bold">What We Offer For You</h2>
