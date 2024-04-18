@@ -4,8 +4,10 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { IoEyeOutline } from "react-icons/io5";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet";
 AOS.init();
 
 
@@ -57,6 +59,9 @@ const Register = () => {
         <div data-aos="fade-down"
             data-aos-duration="1500"
         >
+            <Helmet>
+                <title>Sunset Haven | Registration</title>
+            </Helmet>
             <div className="max-w-3xl mx-auto">
                 <h2 className="text-4xl font-semibold text-center">Registration here</h2>
                 <form onSubmit={handleUserForm} className="card-body">
@@ -86,7 +91,9 @@ const Register = () => {
                             name="password"
                             placeholder="Password"
                             className="input input-bordered" required />
-                        <span onClick={() => setShowPassword(!showPassword)}>Show</span>
+                        <span
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="cursor-pointer absolute right-[27%] top-[67%]"><IoEyeOutline className="text-xl" /></span>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Registration</button>

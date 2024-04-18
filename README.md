@@ -1,15 +1,22 @@
-Website Name: Sunset Haven
-
-npm Packges:
-1.Aos
-2.react-router-dom
-3.react-icons
-4.react-marquee
-
-
-## Documentation
-
+## Website Name: Sunset Haven
 [Live Link](https://linktodocumentation)
+
+## npm Packges:
+- Aos
+- firebase
+- prop-types
+- react-router-dom
+- react-icons
+- react-marquee
+- Animation.css
+
+
+## Features:
+- User friendly web layout
+- Eye catching banner & animation
+- Without create account user can not see property details
+- User can update profile
+
 
 
 

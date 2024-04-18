@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { logInUser, singInUsingGoogle, gitHubLogIn, user } = useContext(AuthContext);
@@ -69,6 +70,9 @@ const Login = () => {
     return (
         <div data-aos="fade-down"
             data-aos-duration="1500">
+            <Helmet>
+                <title>Sunset Haven | Login</title>
+            </Helmet>
             <div className="max-w-3xl mx-auto py-12">
                 <h2 className="text-4xl font-semibold text-center">Login here</h2>
                 <form onSubmit={handleUserLogInForm} className="card-body">

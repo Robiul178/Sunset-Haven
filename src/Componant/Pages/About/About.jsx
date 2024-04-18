@@ -1,10 +1,14 @@
 
+import { Helmet } from 'react-helmet';
 import about from '../../../assets/about.png'
 
 
 const About = () => {
     return (
         <section data-aos='fade-left' data-aos-duration='1300' data-aos-delay='1000'>
+            <Helmet>
+                <title>Sunset Haven | About</title>
+            </Helmet>
             <div className="md:flex md:justify-evenly px-12 py-16">
                 <div>
                     <img src={about} width={465} className='border' alt="" />
